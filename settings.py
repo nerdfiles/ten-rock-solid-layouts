@@ -1,21 +1,23 @@
-# ============================================================ IMPORTS
+# ============================================================ IMPORTS ==
 
 import os
 import sys
+from media import MEDIA_BUNDLES
 
-# ============================================================ UTILS
+
+# ============================================================ UTILS ==
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 gettext = lambda s: s
 
 
-# ============================================================ DEBUG SETTINGS
+# ============================================================ DEBUG SETTINGS ==
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 
-# ============================================================ DJANGO SETTINGS
+# ============================================================ DJANGO SETTINGS == 
 
 ADMINS = (
   ('nerdfiles', 'nerdfiles@gmail.com'),
@@ -29,7 +31,7 @@ SITE_ID = 1
 ROOT_URLCONF = 'urls'
 
 
-# ============================================================ LOCAL SETTINGS
+# ============================================================ LOCAL SETTINGS ==
 
 TIME_ZONE = 'America/Chicago'
 LANGUAGES = [('en', 'EN')]
@@ -50,7 +52,7 @@ DATABASES = {
 }
 
 
-# ============================================================ PATH SETTINGS
+# ============================================================ PATH SETTINGS ==
 
 MEDIA_ROOT = PROJECT_DIR +'/_assets'
 MEDIA_URL = '/_assets/'
@@ -59,7 +61,7 @@ STATIC_ROOT = PROJECT_DIR + '/static'
 STATIC_URL = '/static/'
 
 
-# ============================================================ STATICFILES SETTINGS
+# ============================================================ STATICFILES SETTINGS ==
 
 STATICFILES_DIRS = ()
 STATICFILES_FINDERS = (
@@ -68,12 +70,13 @@ STATICFILES_FINDERS = (
   'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# ============================================================ SECRET KEY
+
+# ============================================================ SECRET KEY ==
 
 SECRET_KEY = 'vo5jm=n(t5+8t!uuacs3y6ug45p6z#pil+f-$70(xaaa5t+k%q'
 
 
-# ============================================================ TEMPLATE LOADERS
+# ============================================================ TEMPLATE LOADERS ==
 
 TEMPLATE_LOADERS = (
   'django.template.loaders.filesystem.Loader',
@@ -82,47 +85,104 @@ TEMPLATE_LOADERS = (
 )
 
 
-# ============================================================ MIDDLEWARE SETTINGS
+# ============================================================ MIDDLEWARE SETTINGS ==
 
 MIDDLEWARE_CLASSES = (
-  # django.middleware
-  'django.middleware.common.CommonMiddleware',
-  'django.middleware.csrf.CsrfViewMiddleware',
+  # third-party middleware
+  'mediagenerator.middleware.MediaMiddleware',
   
   # django.contrib
   'django.contrib.sessions.middleware.SessionMiddleware',
   'django.contrib.auth.middleware.AuthenticationMiddleware',
   'django.contrib.messages.middleware.MessageMiddleware',
+  
+  # django.middleware
+  'django.middleware.common.CommonMiddleware',
+  'django.middleware.csrf.CsrfViewMiddleware',
+  
+  # third-party middleware
 )
 
 
-# ============================================================ TEMPLATE ROOT DIRECTORY
+# ============================================================ TEMPLATE CONTEXT PROCESSORS ==
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+  "django.contrib.auth.context_processors.auth",
+  "django.core.context_processors.debug",
+  "django.core.context_processors.i18n",
+  #"django.core.context_processors.media",
+  "django.contrib.messages.context_processors.messages",
+)
+
+
+# ============================================================ TEMPLATE ROOT DIRECTORY ==
 
 TEMPLATE_DIRS = (
   os.path.join(PROJECT_DIR, '_templates'),
 )
 
 
-# ============================================================ INSTALLED APPS
+# ============================================================ INSTALLED APPS ==
 
 INSTALLED_APPS = (
+  # third-party apps
+  'mediagenerator',
+  'south',
+  
   # django.contrib
   'django.contrib.auth',
   'django.contrib.contenttypes',
   'django.contrib.sessions',
   'django.contrib.sites',
   'django.contrib.messages',
-  'django.contrib.staticfiles',
-  
+  #'django.contrib.staticfiles',
+
+  # third-party apps
+    
   # admin
   'django.contrib.admin',
   'django.contrib.admindocs',
+  
+  # third-party apps
   
   # custom
   'website',
 )
 
-# ============================================================ LOGGING SETTINGS
+
+# ============================================================ APP: MEDIAGENERATOR SETTINGS ==
+
+"""
+
+USAGE:
+
+In templates:
+
+{% load media %}
+{% include_media 'main.css' %}
+{% include_media 'main.css' media='screen,print' %}
+<img src="{% media_url 'some/image.png' %}" />
+
+"""
+
+MEDIA_GENERATORS = (
+  'mediagenerator.generators.copyfiles.CopyFiles',
+  'mediagenerator.generators.bundles.Bundles',
+  'mediagenerator.generators.manifest.Manifest',
+)
+
+MEDIA_DEV_MODE = DEBUG
+DEV_MEDIA_URL = '/_dev_assets/'
+PRODUCTION_MEDIA_URL = '/_assets/'
+IGNORE_APP_MEDIA_DIRS = (
+  'ten_rock_solid_layouts',
+)
+GLOBAL_MEDIA_DIRS = (
+  os.path.join(os.path.dirname(__file__), 'static'),
+)
+
+
+# ============================================================ LOGGING SETTINGS ==
 
 LOG_FILE = PROJECT_DIR + '/logs/app.log'
 LOGGING = {

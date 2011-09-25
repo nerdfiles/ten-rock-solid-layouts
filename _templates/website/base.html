@@ -1,3 +1,4 @@
+{% load media %}
 <!DOCTYPE 
   html 
   public "✰">
@@ -35,39 +36,48 @@
 
 <head>
 
-<!-- =============================================================== META -->
+<!-- =============================================================== META: DEVICE/UA == -->
 
 <meta charset="utf-8" />
+
+{% block device-overrides %}
 <!--[if IE]>
   <meta 
     http-equiv="X-UA-Compatible" 
     content="IE=edge,chrome=1" />
 <![endif]-->
+{% endblock %}
+
+{% block mobile-viewport-optimization %}
 <meta 
   name="viewport" 
   content="width=device-width,initial-scale=1" />
+{% endblock %}
   
 
-<!-- =============================================================== DNS PREFETCHING -->
+<!-- =============================================================== META: DNS PREFETCHING == -->
 
+{% block dns-prefetching %}
 <link 
-    rel="dns-prefetch" 
-    href="http://ajax.googleapis.com/" />
-  <link 
-    rel="dns-prefetch" 
-    href="http://ajax.aspnetcdn.com/" />
-  <!--link
-    rel="dns-prefetch"
-    href="http://dummyimage.com/" /-->
-  <link
-    rel="dns-prefetch"
-    href="http://cdnjs.cloudflare.com/" />
+  rel="dns-prefetch" 
+  href="http://ajax.googleapis.com/" />
+<link 
+  rel="dns-prefetch" 
+  href="http://ajax.aspnetcdn.com/" />
+<!--link
+  rel="dns-prefetch"
+  href="http://dummyimage.com/" /-->
+<link
+  rel="dns-prefetch"
+  href="http://cdnjs.cloudflare.com/" />
+{% endblock %}
     
 
-<!-- =============================================================== SEO -->
+<!-- =============================================================== META: SEO == -->
 
-<title>Layouts!</title>
+<title>{% block page-title %}Layouts!{% endblock %}</title>
 
+{% block page-metadata %}
 <meta 
   name="description" 
   content="" />
@@ -77,26 +87,47 @@
 <meta 
   name="keywords" 
   content="" />
+{% endblock %}
 
 
-<!-- =============================================================== PRESENTATION -->
+<!-- =============================================================== FAVICONS == -->
 
-<link
-  rel="stylesheet"
-  media="all"
-  href="{{ MEDIA_URL }}/_assets/css/global.css" />
+{% block favicons %}
+{# @see mathiasbynens.be/notes/touch-icons #}
+{# For iPhone 4 with high-resolution Retina display: #}
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% media_url 'img/apple-touch-icon-114x114-precomposed.png' %}" />
+{# For first-generation iPad: #}
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% media_url 'img/apple-touch-icon-72x72-precomposed.png' %}" />
+{# For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: #}
+<link rel="apple-touch-icon-precomposed" href="{% media_url 'img/apple-touch-icon-precomposed.png' %}" />
+<link rel="shortcut icon" href="{% media_url 'img/favicon.ico' %}" />
+{% endblock %}
 
 
-<!-- =============================================================== BEHAVIOR -->
+<!-- =============================================================== PRESENTATION == -->
+  
+<!--[if (!IE)|(gte IE 8)]><!--> 
+  {% include_media 'global.css' %} 
+<!--<![endif]-->
+<!--[if lt IE 8]> 
+  {% include_media 'global-ie.css' %} 
+<![endif]-->
+
+
+<!-- =============================================================== BEHAVIOR == -->
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 <script>
-  Modernizr || document.write('<script src="/_assets/js-lib/modernizr/2.0.6/modernizr.min.js"><\/script>');
+  Modernizr || document.write('<script src="{{ MEDIA_URL }}/js-lib/modernizr/2.0.6/modernizr.min.js"><\/script>');
 </script>
+
 
 </head>
 
-<body class="">
+<!-- =============================================================== (ALWAYS) BODYCLASS == -->
+
+<body class="_site_domain-com _templatename-base _pagename-TBD">
+
 
 <!--
 
@@ -123,7 +154,7 @@
 -->
 
 <div class="container">
-  <p>Just another view.</p>
+  <p>Just another view. {{ MEDIA_URL }}</p>
 </div>
 
 <!--
@@ -150,7 +181,7 @@
 
 -->
 
-<!-- =============================================================== SCRIPTBOTTOMS -->
+<!-- =============================================================== SCRIPTBOTTOMS == -->
 
 <script> 
   Modernizr.load([
@@ -180,7 +211,7 @@
 </script> 
 
 
-<!-- =============================================================== SCRIPTBOTTOMS: ANALYTICS -->
+<!-- =============================================================== SCRIPTBOTTOMS: ANALYTICS == -->
 
 <script>
   window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
@@ -190,7 +221,7 @@
 </script>
 
 
-<!-- =============================================================== SCRIPTSOCKS -->
+<!-- =============================================================== SCRIPTSOCKS == -->
 
 <!--[if lt IE 7 ]>
   <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>

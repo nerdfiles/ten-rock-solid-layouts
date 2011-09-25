@@ -1,4 +1,4 @@
-# ============================================================ IMPORTS
+# ============================================================ IMPORTS ==
 
 from django.conf.urls.defaults import *
 from django.contrib import admin
@@ -6,12 +6,12 @@ from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
-# ============================================================ INIT
+# ============================================================ INIT ==
 
 admin.autodiscover()
 
 
-# ============================================================ PATTERNS
+# ============================================================ PATTERNS ==
 
 urlpatterns = patterns('ten_rock_solid_layouts',
   url(r'^$', include('website.urls')),
@@ -29,3 +29,4 @@ urlpatterns+= patterns('',
       }
     )
 )
+

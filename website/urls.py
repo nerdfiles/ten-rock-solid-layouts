@@ -1,6 +1,7 @@
 # ============================================================ IMPORTS
 
 from django.conf.urls.defaults import *
+from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 
 
@@ -8,6 +9,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('website.views',
   url(r'^$', 'index', name='index'),
+  #url(r'^$', direct_to_template, { 'template': 'base.html' )
 )
 
 """
