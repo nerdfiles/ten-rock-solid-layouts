@@ -1,17 +1,31 @@
-from django.conf.urls.defaults import patterns, include, url
+# ============================================================ IMPORTS
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.conf.urls.defaults import *
+from django.contrib import admin
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'ten_rock_solid_layouts.views.home', name='home'),
-    # url(r'^ten_rock_solid_layouts/', include('ten_rock_solid_layouts.foo.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+# ============================================================ INIT
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+admin.autodiscover()
+
+
+# ============================================================ PATTERNS
+
+urlpatterns = patterns('ten_rock_solid_layouts',
+  url(r'^$', include('website.urls')),
+  url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+  url(r'^admin/', include(admin.site.urls)),
+) + staticfiles_urlpatterns()
+
+urlpatterns+= patterns('',
+    url(
+      r'^_assets/(?P<path>.*)$', 
+      'django.views.static.serve', 
+      {
+        'document_root': settings.MEDIA_ROOT, 
+        'show_indexes': True
+      }
+    )
 )

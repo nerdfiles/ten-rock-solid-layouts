@@ -1,0 +1,204 @@
+<!DOCTYPE 
+  html 
+  public "✰">
+
+<!-- =============================================================== NAMEDROP ==
+
+  ...
+
+-->
+
+<!-- =============================================================== FILE DETAILS ==
+
+/**
+ * Base Template for Ten Rock Solid Layouts
+ *
+ * @file            base.html
+ *
+ * @author          nerdfiles
+ * @designer        nerdfiles
+ * @org             none
+ * @copyright       Copyright(c) 2011, 2011
+ *                  by nerdfiles
+ * @date            09.25.2011.1.09.p.cst
+ * @project         ten-rock-solid-layouts
+ * 
+ * @see             http://designshack.co.uk/articles/layouts/10-rock-solid-website-layout-examples
+ */
+
+-->
+
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="{{ LANGUAGE_CODE|default:"en-us" }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="{{ LANGUAGE_CODE|default:"en-us" }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="{{ LANGUAGE_CODE|default:"en-us" }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}> <![endif]-->
+<!--[if gt IE 8]> <!--> <html class="no-js" lang="{{ LANGUAGE_CODE|default:"en-us" }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}> <!--<![endif]-->
+
+<head>
+
+<!-- =============================================================== META -->
+
+<meta charset="utf-8" />
+<!--[if IE]>
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="IE=edge,chrome=1" />
+<![endif]-->
+<meta 
+  name="viewport" 
+  content="width=device-width,initial-scale=1" />
+  
+
+<!-- =============================================================== DNS PREFETCHING -->
+
+<link 
+    rel="dns-prefetch" 
+    href="http://ajax.googleapis.com/" />
+  <link 
+    rel="dns-prefetch" 
+    href="http://ajax.aspnetcdn.com/" />
+  <!--link
+    rel="dns-prefetch"
+    href="http://dummyimage.com/" /-->
+  <link
+    rel="dns-prefetch"
+    href="http://cdnjs.cloudflare.com/" />
+    
+
+<!-- =============================================================== SEO -->
+
+<title>Layouts!</title>
+
+<meta 
+  name="description" 
+  content="" />
+<meta 
+  name="author" 
+  content="" />
+<meta 
+  name="keywords" 
+  content="" />
+
+
+<!-- =============================================================== PRESENTATION -->
+
+<link
+  rel="stylesheet"
+  media="all"
+  href="{{ MEDIA_URL }}/_assets/css/global.css" />
+
+
+<!-- =============================================================== BEHAVIOR -->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
+<script>
+  Modernizr || document.write('<script src="/_assets/js-lib/modernizr/2.0.6/modernizr.min.js"><\/script>');
+</script>
+
+</head>
+
+<body class="">
+
+<!--
+
+
+
+
+
+
+
+
+
+
+          This section has been intentionally left blank.
+
+
+
+
+
+
+
+
+
+
+-->
+
+<div class="container">
+  <p>Just another view.</p>
+</div>
+
+<!--
+
+
+
+
+
+
+
+
+
+
+          This section has been intentionally left blank.
+
+
+
+
+
+
+
+
+
+
+-->
+
+<!-- =============================================================== SCRIPTBOTTOMS -->
+
+<script> 
+  Modernizr.load([
+    {
+      load: [ 
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', 
+        'http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js' ],
+      complete: function () {
+      
+        if ( !window.jQuery ) {
+          Modernizr.load('{{ MEDIA_URL }}/js-lib/jquery/1.6.4/jquery.min.js');
+        }
+                
+        if ( !window.jQuery.ui ) {
+          Modernizr.load('{{ MEDIA_URL }}/js-lib/jqueryui/1.8.13/jquery-ui.min.js');
+        }
+        
+        // @compressed
+        //Modernizr.load('{{ MEDIA_URL }}/js/all_compressed.js');
+      
+        Modernizr.load('{{ MEDIA_URL }}/js/plugins.js');
+        Modernizr.load('{{ MEDIA_URL }}/js/global.js');
+
+      }
+    }
+  ]);
+</script> 
+
+
+<!-- =============================================================== SCRIPTBOTTOMS: ANALYTICS -->
+
+<script>
+  window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+  Modernizr.load({
+    load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+  });
+</script>
+
+
+<!-- =============================================================== SCRIPTSOCKS -->
+
+<!--[if lt IE 7 ]>
+  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
+
+
+</body>
+
+</html>
+
