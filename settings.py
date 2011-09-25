@@ -115,6 +115,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   # django.contrib.*
   "django.contrib.auth.context_processors.auth",
   "django.contrib.messages.context_processors.messages",
+  "sekizai.context_processors.sekizai",
 )
 
 
@@ -130,6 +131,7 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
   # third-party apps
   'mediagenerator',
+  'sekizai',
   
   # django.contrib
   'django.contrib.auth',

@@ -1,4 +1,4 @@
-{% load media %}
+{% load sekizai_tags media %}
 <!DOCTYPE 
   html 
   public "✰">
@@ -38,7 +38,9 @@
 
 <!-- =============================================================== META: DEVICE/UA == -->
 
+{% block charset %}
 <meta charset="utf-8" />
+{% endblock %}
 
 {% block device-overrides %}
 <!--[if IE]>
@@ -53,7 +55,7 @@
   name="viewport" 
   content="width=device-width,initial-scale=1" />
 {% endblock %}
-  
+
 
 <!-- =============================================================== META: DNS PREFETCHING == -->
 
@@ -71,9 +73,9 @@
   rel="dns-prefetch"
   href="http://cdnjs.cloudflare.com/" />
 {% endblock %}
-    
 
-<!-- =============================================================== META: SEO == -->
+
+<!-- =============================================================== META: PAGE META == -->
 
 <title>{% block page-title %}Layouts!{% endblock %}</title>
 
@@ -93,14 +95,10 @@
 <!-- =============================================================== FAVICONS == -->
 
 {% block favicons %}
-{# @see mathiasbynens.be/notes/touch-icons #}
-{# For iPhone 4 with high-resolution Retina display: #}
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% media_url 'img-ui/apple-touch-icon-114x114-precomposed.png' %}" />
-{# For first-generation iPad: #}
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% media_url 'img-ui/apple-touch-icon-72x72-precomposed.png' %}" />
-{# For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: #}
-<link rel="apple-touch-icon-precomposed" href="{% media_url 'img-ui/apple-touch-icon-precomposed.png' %}" />
-<link rel="shortcut icon" href="{% media_url 'img-ui/favicon.ico' %}" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% media_url 'img-ui/apple-touch-icon-114x114-precomposed.png' %}" title="For iPhone 4 with high-resolution Retina display" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% media_url 'img-ui/apple-touch-icon-72x72-precomposed.png' %}" title="For first-generation iPad" />
+<link rel="apple-touch-icon-precomposed" href="{% media_url 'img-ui/apple-touch-icon-precomposed.png' %}" title="For non-Retina iPhone, iPod Touch, and Android 2.1+ devices" />
+<link rel="shortcut icon" href="{% media_url 'img-ui/favicon.ico' %}" title="For all other User Agents" />
 {% endblock %}
 
 
@@ -108,18 +106,21 @@
   
 <!--[if (!IE)|(gte IE 8)]><!--> 
 {% include_media "global.css" media='screen,print' %}
+{% render_block "css" %}
 <!--<![endif]-->
 <!--[if lt IE 8]> 
 {% include_media 'global-ie.css' media='screen,print' %} 
 <![endif]-->
 
 
-<!-- =============================================================== BEHAVIOR == -->
+<!-- =============================================================== SCRIPT-HAT: BEHAVIOR == -->
 
+{% block script-hat %}
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 <script>
   Modernizr || document.write('<script src="{{ MEDIA_URL }}js-lib/modernizr/2.0.6/modernizr.min.js"><\/script>');
 </script>
+{% endblock %}
 
 
 </head>
@@ -181,8 +182,9 @@
 
 -->
 
-<!-- =============================================================== SCRIPTBOTTOMS == -->
+<!-- =============================================================== SCRIPT-BOTTOMS == -->
 
+{% block script-bottoms %}
 <script> 
   Modernizr.load([
     {
@@ -209,24 +211,30 @@
     }
   ]);
 </script> 
+{% endblock %}
+{% render_block "js" %}
 
 
-<!-- =============================================================== SCRIPTBOTTOMS: ANALYTICS == -->
+<!-- =============================================================== SCRIPT-BOTTOMS: ANALYTICS == -->
 
+{% block script-bottoms-analytics %}
 <script>
   window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
   Modernizr.load({
     load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
   });
 </script>
+{% endblock %}
 
 
-<!-- =============================================================== SCRIPTSOCKS == -->
+<!-- =============================================================== SCRIPT-SOCKS == -->
 
+{% block script-socks %}
 <!--[if lt IE 7 ]>
   <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
   <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 <![endif]-->
+{% endblock %}
 
 
 </body>
