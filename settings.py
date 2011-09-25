@@ -26,7 +26,7 @@ MANAGERS = ADMINS
 SITE_ID = 1
 
 # URL Settings
-ROOT_URLCONF = 'ten_rock_solid_layouts.urls'
+ROOT_URLCONF = 'urls'
 
 
 # ============================================================ LOCAL SETTINGS
