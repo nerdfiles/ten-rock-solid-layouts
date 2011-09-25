@@ -95,22 +95,22 @@
 {% block favicons %}
 {# @see mathiasbynens.be/notes/touch-icons #}
 {# For iPhone 4 with high-resolution Retina display: #}
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% media_url 'img/apple-touch-icon-114x114-precomposed.png' %}" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% media_url 'img-ui/apple-touch-icon-114x114-precomposed.png' %}" />
 {# For first-generation iPad: #}
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% media_url 'img/apple-touch-icon-72x72-precomposed.png' %}" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% media_url 'img-ui/apple-touch-icon-72x72-precomposed.png' %}" />
 {# For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: #}
-<link rel="apple-touch-icon-precomposed" href="{% media_url 'img/apple-touch-icon-precomposed.png' %}" />
-<link rel="shortcut icon" href="{% media_url 'img/favicon.ico' %}" />
+<link rel="apple-touch-icon-precomposed" href="{% media_url 'img-ui/apple-touch-icon-precomposed.png' %}" />
+<link rel="shortcut icon" href="{% media_url 'img-ui/favicon.ico' %}" />
 {% endblock %}
 
 
 <!-- =============================================================== PRESENTATION == -->
   
 <!--[if (!IE)|(gte IE 8)]><!--> 
-  {% include_media 'global.css' %} 
+{% include_media "global.css" media='screen,print' %}
 <!--<![endif]-->
 <!--[if lt IE 8]> 
-  {% include_media 'global-ie.css' %} 
+{% include_media 'global-ie.css' media='screen,print' %} 
 <![endif]-->
 
 
@@ -118,7 +118,7 @@
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 <script>
-  Modernizr || document.write('<script src="{{ MEDIA_URL }}/js-lib/modernizr/2.0.6/modernizr.min.js"><\/script>');
+  Modernizr || document.write('<script src="{{ MEDIA_URL }}js-lib/modernizr/2.0.6/modernizr.min.js"><\/script>');
 </script>
 
 
@@ -192,18 +192,18 @@
       complete: function () {
       
         if ( !window.jQuery ) {
-          Modernizr.load('{{ MEDIA_URL }}/js-lib/jquery/1.6.4/jquery.min.js');
+          Modernizr.load('{{ MEDIA_URL }}js-lib/jquery/1.6.4/jquery.min.js');
         }
                 
         if ( !window.jQuery.ui ) {
-          Modernizr.load('{{ MEDIA_URL }}/js-lib/jqueryui/1.8.13/jquery-ui.min.js');
+          Modernizr.load('{{ MEDIA_URL }}js-lib/jqueryui/1.8.13/jquery-ui.min.js');
         }
         
         // @compressed
-        //Modernizr.load('{{ MEDIA_URL }}/js/all_compressed.js');
+        //Modernizr.load('{{ MEDIA_URL }}js/all_compressed.js');
       
-        Modernizr.load('{{ MEDIA_URL }}/js/plugins.js');
-        Modernizr.load('{{ MEDIA_URL }}/js/global.js');
+        Modernizr.load('{{ MEDIA_URL }}js/plugins.js');
+        Modernizr.load('{{ MEDIA_URL }}js/global.js');
 
       }
     }

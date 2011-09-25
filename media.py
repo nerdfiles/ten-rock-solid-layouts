@@ -1,20 +1,23 @@
 _base_css_bundle = (
-  '_assets/css/reset.css',
-  '_assets/css/type.css',
+  'css/reset.css',
+  'css/type.css',
 )
 
 _base_js_bundle = (
-  '_assets/js/plugins.js',
-  '_assets/js/global.js',
+  'js/plugins.js',
+  'js/global.js',
 )
 
 MEDIA_BUNDLES = (
   ('global.css',)
       + _base_css_bundle
-      + ('_assets/css/global.css',),
+      + ('css/global.css',),
+      
   ('global-ie.css',)
       + _base_css_bundle
-      + ('_assets/css/global-ie.css',),
+      + ('css/global-ie.css',),
+      
   ('global.js',)
       + _base_js_bundle,
-),
+)
+

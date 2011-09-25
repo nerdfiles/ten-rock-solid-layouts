@@ -54,11 +54,13 @@ DATABASES = {
 
 # ============================================================ PATH SETTINGS ==
 
-MEDIA_ROOT = PROJECT_DIR +'/_assets'
+MEDIA_ROOT = PROJECT_DIR + '/_assets'
 MEDIA_URL = '/_assets/'
-ADMIN_MEDIA_PREFIX = '/_assets/admin/'
+"""
 STATIC_ROOT = PROJECT_DIR + '/static'
 STATIC_URL = '/static/'
+"""
+ADMIN_MEDIA_PREFIX = '/_assets/admin/'
 
 
 # ============================================================ STATICFILES SETTINGS ==
@@ -88,29 +90,30 @@ TEMPLATE_LOADERS = (
 # ============================================================ MIDDLEWARE SETTINGS ==
 
 MIDDLEWARE_CLASSES = (
-  # third-party middleware
-  'mediagenerator.middleware.MediaMiddleware',
-  
-  # django.contrib
+  # django.contrib.*
   'django.contrib.sessions.middleware.SessionMiddleware',
   'django.contrib.auth.middleware.AuthenticationMiddleware',
   'django.contrib.messages.middleware.MessageMiddleware',
   
-  # django.middleware
+  # django.middleware.*
   'django.middleware.common.CommonMiddleware',
   'django.middleware.csrf.CsrfViewMiddleware',
   
   # third-party middleware
+  # ... additional middleware
 )
 
 
 # ============================================================ TEMPLATE CONTEXT PROCESSORS ==
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-  "django.contrib.auth.context_processors.auth",
+  # django.core.context_processors.*
   "django.core.context_processors.debug",
   "django.core.context_processors.i18n",
-  #"django.core.context_processors.media",
+  "django.core.context_processors.media",
+  
+  # django.contrib.*
+  "django.contrib.auth.context_processors.auth",
   "django.contrib.messages.context_processors.messages",
 )
 
@@ -127,7 +130,6 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
   # third-party apps
   'mediagenerator',
-  'south',
   
   # django.contrib
   'django.contrib.auth',
@@ -135,7 +137,6 @@ INSTALLED_APPS = (
   'django.contrib.sessions',
   'django.contrib.sites',
   'django.contrib.messages',
-  #'django.contrib.staticfiles',
 
   # third-party apps
     
@@ -144,6 +145,7 @@ INSTALLED_APPS = (
   'django.contrib.admindocs',
   
   # third-party apps
+  'south',
   
   # custom
   'website',
@@ -166,19 +168,23 @@ In templates:
 """
 
 MEDIA_GENERATORS = (
-  'mediagenerator.generators.copyfiles.CopyFiles',
-  'mediagenerator.generators.bundles.Bundles',
-  'mediagenerator.generators.manifest.Manifest',
+    'mediagenerator.generators.copyfiles.CopyFiles',
+    'mediagenerator.generators.bundles.Bundles',
+    'mediagenerator.generators.manifest.Manifest',
 )
 
-MEDIA_DEV_MODE = DEBUG
-DEV_MEDIA_URL = '/_dev_assets/'
-PRODUCTION_MEDIA_URL = '/_assets/'
+MIDDLEWARE_CLASSES = (
+  # third-party middleware
+  'mediagenerator.middleware.MediaMiddleware', ) + MIDDLEWARE_CLASSES
+
+MEDIA_DEV_MODE = True
+DEV_MEDIA_URL = '/_assets/'
+PRODUCTION_MEDIA_URL = '/static/'
 IGNORE_APP_MEDIA_DIRS = (
-  'ten_rock_solid_layouts',
+  'static',
 )
 GLOBAL_MEDIA_DIRS = (
-  os.path.join(os.path.dirname(__file__), 'static'),
+  os.path.join(PROJECT_DIR, '_assets'),
 )
 
 

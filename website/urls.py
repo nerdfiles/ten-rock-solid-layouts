@@ -8,8 +8,8 @@ from django.contrib import admin
 # ============================================================ PATTERNS
 
 urlpatterns = patterns('website.views',
-  url(r'^$', 'index', name='index'),
-  #url(r'^$', direct_to_template, { 'template': 'base.html' )
+  #url(r'^$', 'index', name='index'),
+  url(r'^$', direct_to_template, { 'template': 'website/base.html' })
 )
 
 """
