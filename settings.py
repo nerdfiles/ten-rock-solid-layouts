@@ -2,7 +2,6 @@
 
 import os
 import sys
-from media import MEDIA_BUNDLES
 
 
 # ============================================================ UTILS ==
@@ -56,10 +55,8 @@ DATABASES = {
 
 MEDIA_ROOT = PROJECT_DIR + '/_assets'
 MEDIA_URL = '/_assets/'
-"""
 STATIC_ROOT = PROJECT_DIR + '/static'
 STATIC_URL = '/static/'
-"""
 ADMIN_MEDIA_PREFIX = '/_assets/admin/'
 
 
@@ -115,6 +112,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   # django.contrib.*
   "django.contrib.auth.context_processors.auth",
   "django.contrib.messages.context_processors.messages",
+  
+  # other
   "sekizai.context_processors.sekizai",
 )
 
@@ -130,7 +129,6 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
   # third-party apps
-  'mediagenerator',
   'sekizai',
   
   # django.contrib
@@ -139,8 +137,7 @@ INSTALLED_APPS = (
   'django.contrib.sessions',
   'django.contrib.sites',
   'django.contrib.messages',
-
-  # third-party apps
+  'django.contrib.staticfiles',
     
   # admin
   'django.contrib.admin',
@@ -151,42 +148,6 @@ INSTALLED_APPS = (
   
   # custom
   'website',
-)
-
-
-# ============================================================ APP: MEDIAGENERATOR SETTINGS ==
-
-"""
-
-USAGE:
-
-In templates:
-
-{% load media %}
-{% include_media 'main.css' %}
-{% include_media 'main.css' media='screen,print' %}
-<img src="{% media_url 'some/image.png' %}" />
-
-"""
-
-MEDIA_GENERATORS = (
-    'mediagenerator.generators.copyfiles.CopyFiles',
-    'mediagenerator.generators.bundles.Bundles',
-    'mediagenerator.generators.manifest.Manifest',
-)
-
-MIDDLEWARE_CLASSES = (
-  # third-party middleware
-  'mediagenerator.middleware.MediaMiddleware', ) + MIDDLEWARE_CLASSES
-
-MEDIA_DEV_MODE = True
-DEV_MEDIA_URL = '/_assets/'
-PRODUCTION_MEDIA_URL = '/static/'
-IGNORE_APP_MEDIA_DIRS = (
-  'static',
-)
-GLOBAL_MEDIA_DIRS = (
-  os.path.join(PROJECT_DIR, '_assets'),
 )
 
 
