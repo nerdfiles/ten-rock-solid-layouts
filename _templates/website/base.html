@@ -1,5 +1,5 @@
-{% spaceless %}
 {% load sekizai_tags %}
+{% spaceless %}
 
 {% block presentation %}{% addtoblock "css" %}
 <!--[if (!IE)|(gte IE 8)]><!--> 
@@ -29,7 +29,8 @@
   Modernizr.load([
     {
       load: [ 
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', 
+        //'http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', 
+        'http://code.jquery.com/jquery-1.7b1.js',
         'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js' ],
       complete: function () {
       
@@ -199,7 +200,13 @@
 -->
 
 <div class="container">
-  <p>Just another view. {{ MEDIA_URL }}</p>
+{% block content %}
+    <ul>
+        <li><a href="/template/three-boxes/">Three Boxes</a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
+{% endblock %}
 </div>
 
 <!--

@@ -1,13 +1,36 @@
 # ============================================================ IMPORTS
 
-from django.template.context import RequestContext
-from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404
-#from django.http import HttpResponse, Http404
+from django.shortcuts import render_to_response, get_object_or_404
+from django.template import RequestContext
+from django.views.generic.simple import direct_to_template
 
 
-# ============================================================ VIEWS FUNCTIONS
+# ============================================================ VIEWS UTILS
 
-def index(request, context):
-  #latest_OBJ_list = OBJ.objects.all().order_by('-pub_date')[:5]
-  #return render_to_response('website/index.html', {'latest_OBJ_list': latest_OBJ_list})
-  return render_to_response('website/base.html', context_instance=RequestContext(request, context))
+"""
+
+FUNCTION
+NAME: render_response
+USAGE: render_response(request, 'foo_base.html', {'foo': Foo.objects.all()})
+
+"""
+
+def render_response(req, *args, **kwargs):
+    kwargs['context_instance'] = RequestContext(req)
+    return render_to_response(*args, **kwargs)
+
+
+# ============================================================ VIEWS FUNCTIONS    
+        
+def index(self):
+    #return render_to_response('website/base.html', {}, context_instance=RequestContext(request))
+
+    return direct_to_template(self, 'website/base.html', {
+        'extra-context': '',
+    })
+    
+def template_threeboxes(self):
+
+    return direct_to_template(self, 'website/template-threeboxes.html', {
+        'extra-context': '',
+    })

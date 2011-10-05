@@ -27,7 +27,7 @@ MANAGERS = ADMINS
 SITE_ID = 1
 
 # URL Settings
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'ten-rock-solid-layouts.urls'
 
 
 # ============================================================ LOCAL SETTINGS ==
@@ -104,6 +104,7 @@ MIDDLEWARE_CLASSES = (
 # ============================================================ TEMPLATE CONTEXT PROCESSORS ==
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+  
   # django.core.context_processors.*
   "django.core.context_processors.debug",
   "django.core.context_processors.i18n",
@@ -113,7 +114,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   "django.contrib.auth.context_processors.auth",
   "django.contrib.messages.context_processors.messages",
   
-  # other
   "sekizai.context_processors.sekizai",
 )
 
@@ -128,8 +128,6 @@ TEMPLATE_DIRS = (
 # ============================================================ INSTALLED APPS ==
 
 INSTALLED_APPS = (
-  # third-party apps
-  'sekizai',
   
   # django.contrib
   'django.contrib.auth',
@@ -147,7 +145,11 @@ INSTALLED_APPS = (
   'south',
   
   # custom
+  'ten-rock-solid-layouts',
   'website',
+  
+  # third-party apps
+  'sekizai',
 )
 
 
