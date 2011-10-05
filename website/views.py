@@ -22,10 +22,10 @@ def render_response(req, *args, **kwargs):
 
 # ============================================================ VIEWS FUNCTIONS    
         
-def index(self):
+def template_base(self):
     #return render_to_response('website/base.html', {}, context_instance=RequestContext(request))
 
-    return direct_to_template(self, 'website/base.html', {
+    return direct_to_template(self, 'website/template-base.html', {
         'extra-context': '',
     })
     

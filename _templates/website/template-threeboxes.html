@@ -1,6 +1,40 @@
-{% extends 'website/base.html' %}
+{% extends 'website/template-base.html' %}
 {% load sekizai_tags %}
 
-{% block content %}
-  <p>Three Boxes</p>
+<!-- ================================================================ BLOCK: TEMPLATE-NAME == -->
+
+{% block template-name %}threeboxes{% endblock %}
+
+
+<!-- ================================================================ BLOCK: BASE-HEADER == -->
+
+{% block header-base %}
+{% include 'website/header-threeboxes.html' %}
+{% endblock %}
+
+
+<!-- ================================================================ BLOCK: BASE-CONTENT == -->
+
+{% block content-base %}
+
+<div class="box box-stage">
+    <p>Box Stage</p>
+</div>
+
+<div class="box box-row">
+    <div class="box box-stage">
+        <p>Box Stage</p>
+    </div>
+    <div class="box box-stage">
+        <p>Box Stage</p>
+    </div>
+</div>
+
+{% endblock %}
+
+
+<!-- ================================================================ BLOCK: BASE-FOOTER == -->
+
+{% block footer-base %}
+{% include 'website/footer-threeboxes.html' %}
 {% endblock %}

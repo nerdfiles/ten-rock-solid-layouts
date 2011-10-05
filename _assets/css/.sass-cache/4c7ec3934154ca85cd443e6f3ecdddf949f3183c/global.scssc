@@ -1,8 +1,8 @@
 3.1.7 (Brainy Betty)
-c2e58e5b0214953097e6243f77aaa9564a3ddbd9
+b79a89c959c0dbd388e410241bf8af041cd9d1f2
 o:Sass::Tree::RootNode
 :@has_childrenT:
-@linei:@template"`/* =============================================================== FILE DETAILS == 
+@linei:@template"C"/* =============================================================== FILE DETAILS == 
  *
  * Global Stylesheet (SCSS) for Ten Rock Solid Layouts
  *
@@ -205,9 +205,39 @@ $white: #ffffff;
 /* =============================================================== BODY CLASS SETS == */
 
 body { background: $white; }
-body._site_domain-com { background: $white; } 
-body._templatename-base { } 
-body._pagename-TBD { }
+body._site_domain-com { } 
+body._template-name_base { } 
+body._template-name_threeboxes { }
+body._page-name_TBD { }
+
+
+/* ==================================================================================
+   TEMPLATE: BASE
+   ================================================================================== */
+
+body._template-name_base { 
+    background: #fff;
+}
+
+
+/* ==================================================================================
+   TEMPLATE: THREEBOXES
+   ================================================================================== */
+
+body._template-name_threeboxes { 
+    background: #e0e0e0;
+    
+    .container { 
+        margin: 0 auto; 
+        width: 864px; }
+    
+    //.header-threeboxes { }
+    .header-base { 
+        background: orange; }
+    
+    //.footer-threeboxes { }
+    .footer-base { }
+}
 
 
 /* ==================================================================================
@@ -238,7 +268,7 @@ body._pagename-TBD { }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-:@options{ :@children[jo:Sass::Tree::CommentNode:@value"5/* =============================================================== FILE DETAILS == 
+:@options{ :@children[oo:Sass::Tree::CommentNode:@value"5/* =============================================================== FILE DETAILS == 
  *
  * Global Stylesheet (SCSS) for Ten Rock Solid Layouts
  *
@@ -528,72 +558,90 @@ white;
 white:@underscored_name"
 white;iË;!;";	@;["background;
 [ ;#i ;#i o;;T;["body._site_domain-com;iÌ;o;;" ;iÌ;[o;;[o;;@Ú;iÌ;[o;	;@Ú;iÌ;0;["	bodyo:Sass::Selector::Class;@Ú;iÌ;["_site_domain-com;	@;
-[o;;o;<	;iÌ;	@;"
-white;="
-white;iÌ;!;";	@;["background;
-[ ;#i ;#i o;;T;["body._templatename-base;iÍ;o;;" ;iÍ;[o;;[o;;@ò;iÍ;[o;	;@ò;iÍ;0;["	bodyo;>;@ò;iÍ;["_templatename-base;	@;
-[ ;#i o;;T;["body._pagename-TBD;iÎ;o;;" ;iÎ;[o;;[o;;@;iÎ;[o;	;@;iÎ;0;["	bodyo;>;@;iÎ;["_pagename-TBD;	@;
-[ ;#i o;;"Î/* ==================================================================================
-    NON-SEMANTIC HELPER CLASSES
-   ================================================================================== */;iÑ;0;	@;
-[ ;[ ;0o;;" /* For image replacement */;iÖ;0;	@;
-[ ;[ ;0o;;T;[".ir;i×;o;;" ;i×;[o;;[o;;@;i×;[o;>;@;i×;["ir;	@;
-[o;;o;;"
-block;	@;; ;i×;!;";	@;["display;
-[ ;#i o;;o;);iþü;i×;*[ ;	@;+["em;,"-999em;i×;!;";	@;["text-indent;
-[ ;#i o;;o;;"hidden;	@;; ;i×;!;";	@;["overflow;
-[ ;#i o;;o;;"no-repeat;	@;; ;i×;!;";	@;["background-repeat;
-[ ;#i o;;o;;"	left;	@;; ;i×;!;";	@;["text-align;
-[ ;#i o;;o;;"ltr;	@;; ;i×;!;";	@;["direction;
-[ ;#i ;#i o;;T;[".ir br;iØ;o;;" ;iØ;[o;;[o;;@Q;iØ;[o;>;@Q;iØ;["iro;;@Q;iØ;[o;	;@Q;iØ;0;["br;	@;
-[o;;o;;"	none;	@;; ;iØ;!;";	@;["display;
-[ ;#i ;#i o;;"l/* Hide for both screenreaders and browsers:
-   css-discuss.incutio.com/wiki/Screenreader_Visibility */;iÚ;0;	@;
-[ ;[ ;0o;;T;[".hidden;iÜ;o;;" ;iÜ;[o;;[o;;@n;iÜ;[o;>;@n;iÜ;["hidden;	@;
-[o;;o;;"	none;	@;; ;iÜ;!;";	@;["display;
-[ ;#i o;;o;;"hidden;	@;; ;iÜ;!;";	@;["visibility;
-[ ;#i ;#i o;;"™/* Hide only visually, but have it available for screenreaders: by Jon Neal.
-  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */;iÞ;0;	@;
-[ ;[ ;0o;;T;[".visuallyhidden;ià;o;;" ;ià;[o;;[o;;@Œ;ià;[o;>;@Œ;ià;["visuallyhidden;	@;
-[o;;o;;"0;	@;; ;ià;!;";	@;["border;
-[ ;#i o;;o;&
-;ià;	@;"	rect;'{ ;([o:Sass::Script::List	;[	o;);i ;ià;*@Å;	@;+[ ;,"0o;);i ;ià;*@Å;	@;+[ ;,"0o;);i ;ià;*@Å;	@;+[ ;,"0o;);i ;ià;*@Å;	@;+[ ;,"0;ià;	@:@separator:
-space;ià;!;";	@;["	clip;
-[ ;#i o;;o;;"1px;	@;; ;ià;!;";	@;["height;
-[ ;#i o;;o;);iú;ià;*[ ;	@;+["px;,"	-1px;ià;!;";	@;["margin;
-[ ;#i o;;o;;"hidden;	@;; ;ià;!;";	@;["overflow;
-[ ;#i o;;o;;"0;	@;; ;ià;!;";	@;["padding;
-[ ;#i o;;o;;"absolute;	@;; ;ià;!;";	@;["position;
-[ ;#i o;;o;;"1px;	@;; ;ià;!;";	@;["
-width;
-[ ;#i ;#i o;;"‡/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */;iâ;0;	@;
-[ ;[ ;0o;;T;["F.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus;iã;o;;" ;iã;[o;;[o;;@á;iã;[o;>;@á;iã;["visuallyhiddeno;>;@á;iã;["focusableo;-
-;@á;iã;["active;.0;;0o;;[o;;@á;iã;[o;>;@á;iã;["visuallyhiddeno;>;@á;iã;["focusableo;-
-;@á;iã;["
-focus;.0;;0;	@;
-[o;;o;;"	auto;	@;; ;iã;!;";	@;["	clip;
-[ ;#i o;;o;;"	auto;	@;; ;iã;!;";	@;["height;
-[ ;#i o;;o;;"0;	@;; ;iã;!;";	@;["margin;
-[ ;#i o;;o;;"visible;	@;; ;iã;!;";	@;["overflow;
-[ ;#i o;;o;;"static;	@;; ;iã;!;";	@;["position;
-[ ;#i o;;o;;"	auto;	@;; ;iã;!;";	@;["
-width;
-[ ;#i ;#i o;;"D/* Hide visually and from screenreaders, but maintain layout */;iå;0;	@;
-[ ;[ ;0o;;T;[".invisible;iæ;o;;" ;iæ;[o;;[o;;@*;iæ;[o;>;@*;iæ;["invisible;	@;
-[o;;o;;"hidden;	@;; ;iæ;!;";	@;["visibility;
-[ ;#i ;#i o;;"D/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */;iè;0;	@;
-[ ;[ ;0o;;T;["&.clearfix:before, .clearfix:after;ié;o;;" ;ié;[o;;[o;;@B;ié;[o;>;@B;ié;["clearfixo;-
-;@B;ié;["before;.0;;0o;;[o;;@B;ié;[o;>;@B;ié;["clearfixo;-
-;@B;ié;["
-after;.0;;0;	@;
-[o;;o;;""";	@;; ;ié;!;";	@;["content;
+[ ;#i o;;T;["body._template-name_base;iÍ;o;;" ;iÍ;[o;;[o;;@ë;iÍ;[o;	;@ë;iÍ;0;["	bodyo;>;@ë;iÍ;["_template-name_base;	@;
+[ ;#i o;;T;["#body._template-name_threeboxes;iÎ;o;;" ;iÎ;[o;;[o;;@ü;iÎ;[o;	;@ü;iÎ;0;["	bodyo;>;@ü;iÎ;["_template-name_threeboxes;	@;
+[ ;#i o;;T;["body._page-name_TBD;iÏ;o;;" ;iÏ;[o;;[o;;@;iÏ;[o;	;@;iÏ;0;["	bodyo;>;@;iÏ;["_page-name_TBD;	@;
+[ ;#i o;;"À/* ==================================================================================
+   TEMPLATE: BASE
+   ================================================================================== */;iÒ;0;	@;
+[ ;[ ;0o;;T;["body._template-name_base;iÖ;o;;" ;iÖ;[o;;[o;;@";iÖ;[o;	;@";iÖ;0;["	bodyo;>;@";iÖ;["_template-name_base;	@;
+[o;;o;;"	#fff;	@;; ;i×;!;";	@;["background;
+[ ;#i ;#i o;;"Æ/* ==================================================================================
+   TEMPLATE: THREEBOXES
+   ================================================================================== */;iÛ;0;	@;
+[ ;[ ;0o;;T;["#body._template-name_threeboxes;iß;o;;" ;iß;[o;;[o;;@=;iß;[o;	;@=;iß;0;["	bodyo;>;@=;iß;["_template-name_threeboxes;	@;
+[o;;o;;"#e0e0e0;	@;; ;ià;!;";	@;["background;
+[ ;#i o;;T;[".container;iâ;o;;" ;iâ;[o;;[o;;@T;iâ;[o;>;@T;iâ;["container;	@;
+[o;;o;;"0 auto;	@;; ;iã;!;";	@;["margin;
 [ ;#i o;;o;;"
-table;	@;; ;ié;!;";	@;["display;
-[ ;#i ;#i o;;T;[".clearfix:after;iê;o;;" ;iê;[o;;[o;;@i;iê;[o;>;@i;iê;["clearfixo;-
-;@i;iê;["
+864px;	@;; ;iä;!;";	@;["
+width;
+[ ;#i ;#i o;;" /*.header-threeboxes { } */;iæ;i ;	@;
+[ ;[ ;0o;;T;[".header-base;iç;o;;" ;iç;[o;;[o;;@r;iç;[o;>;@r;iç;["header-base;	@;
+[o;;o;;"orange;	@;; ;iè;!;";	@;["background;
+[ ;#i ;#i o;;" /*.footer-threeboxes { } */;iê;i ;	@;
+[ ;[ ;0o;;T;[".footer-base;ië;o;;" ;ië;[o;;[o;;@Š;ië;[o;>;@Š;ië;["footer-base;	@;
+[ ;#i ;#i o;;"Î/* ==================================================================================
+    NON-SEMANTIC HELPER CLASSES
+   ================================================================================== */;iï;0;	@;
+[ ;[ ;0o;;" /* For image replacement */;iô;0;	@;
+[ ;[ ;0o;;T;[".ir;iõ;o;;" ;iõ;[o;;[o;;@ ;iõ;[o;>;@ ;iõ;["ir;	@;
+[o;;o;;"
+block;	@;; ;iõ;!;";	@;["display;
+[ ;#i o;;o;);iþü;iõ;*[ ;	@;+["em;,"-999em;iõ;!;";	@;["text-indent;
+[ ;#i o;;o;;"hidden;	@;; ;iõ;!;";	@;["overflow;
+[ ;#i o;;o;;"no-repeat;	@;; ;iõ;!;";	@;["background-repeat;
+[ ;#i o;;o;;"	left;	@;; ;iõ;!;";	@;["text-align;
+[ ;#i o;;o;;"ltr;	@;; ;iõ;!;";	@;["direction;
+[ ;#i ;#i o;;T;[".ir br;iö;o;;" ;iö;[o;;[o;;@Õ;iö;[o;>;@Õ;iö;["iro;;@Õ;iö;[o;	;@Õ;iö;0;["br;	@;
+[o;;o;;"	none;	@;; ;iö;!;";	@;["display;
+[ ;#i ;#i o;;"l/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */;iø;0;	@;
+[ ;[ ;0o;;T;[".hidden;iú;o;;" ;iú;[o;;[o;;@ò;iú;[o;>;@ò;iú;["hidden;	@;
+[o;;o;;"	none;	@;; ;iú;!;";	@;["display;
+[ ;#i o;;o;;"hidden;	@;; ;iú;!;";	@;["visibility;
+[ ;#i ;#i o;;"™/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */;iü;0;	@;
+[ ;[ ;0o;;T;[".visuallyhidden;iþ;o;;" ;iþ;[o;;[o;;@;iþ;[o;>;@;iþ;["visuallyhidden;	@;
+[o;;o;;"0;	@;; ;iþ;!;";	@;["border;
+[ ;#i o;;o;&
+;iþ;	@;"	rect;'{ ;([o:Sass::Script::List	;[	o;);i ;iþ;*@Å;	@;+[ ;,"0o;);i ;iþ;*@Å;	@;+[ ;,"0o;);i ;iþ;*@Å;	@;+[ ;,"0o;);i ;iþ;*@Å;	@;+[ ;,"0;iþ;	@:@separator:
+space;iþ;!;";	@;["	clip;
+[ ;#i o;;o;;"1px;	@;; ;iþ;!;";	@;["height;
+[ ;#i o;;o;);iú;iþ;*[ ;	@;+["px;,"	-1px;iþ;!;";	@;["margin;
+[ ;#i o;;o;;"hidden;	@;; ;iþ;!;";	@;["overflow;
+[ ;#i o;;o;;"0;	@;; ;iþ;!;";	@;["padding;
+[ ;#i o;;o;;"absolute;	@;; ;iþ;!;";	@;["position;
+[ ;#i o;;o;;"1px;	@;; ;iþ;!;";	@;["
+width;
+[ ;#i ;#i o;;"‡/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */;i ;0;	@;
+[ ;[ ;0o;;T;["F.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus;i;o;;" ;i;[o;;[o;;@e;i;[o;>;@e;i;["visuallyhiddeno;>;@e;i;["focusableo;-
+;@e;i;["active;.0;;0o;;[o;;@e;i;[o;>;@e;i;["visuallyhiddeno;>;@e;i;["focusableo;-
+;@e;i;["
+focus;.0;;0;	@;
+[o;;o;;"	auto;	@;; ;i;!;";	@;["	clip;
+[ ;#i o;;o;;"	auto;	@;; ;i;!;";	@;["height;
+[ ;#i o;;o;;"0;	@;; ;i;!;";	@;["margin;
+[ ;#i o;;o;;"visible;	@;; ;i;!;";	@;["overflow;
+[ ;#i o;;o;;"static;	@;; ;i;!;";	@;["position;
+[ ;#i o;;o;;"	auto;	@;; ;i;!;";	@;["
+width;
+[ ;#i ;#i o;;"D/* Hide visually and from screenreaders, but maintain layout */;i;0;	@;
+[ ;[ ;0o;;T;[".invisible;i;o;;" ;i;[o;;[o;;@®;i;[o;>;@®;i;["invisible;	@;
+[o;;o;;"hidden;	@;; ;i;!;";	@;["visibility;
+[ ;#i ;#i o;;"D/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */;i;0;	@;
+[ ;[ ;0o;;T;["&.clearfix:before, .clearfix:after;i;o;;" ;i;[o;;[o;;@Æ;i;[o;>;@Æ;i;["clearfixo;-
+;@Æ;i;["before;.0;;0o;;[o;;@Æ;i;[o;>;@Æ;i;["clearfixo;-
+;@Æ;i;["
 after;.0;;0;	@;
-[o;;o;;"	both;	@;; ;iê;!;";	@;["
+[o;;o;;""";	@;; ;i;!;";	@;["content;
+[ ;#i o;;o;;"
+table;	@;; ;i;!;";	@;["display;
+[ ;#i ;#i o;;T;[".clearfix:after;i;o;;" ;i;[o;;[o;;@í;i;[o;>;@í;i;["clearfixo;-
+;@í;i;["
+after;.0;;0;	@;
+[o;;o;;"	both;	@;; ;i;!;";	@;["
 clear;
-[ ;#i ;#i o;;T;[".clearfix;ië;o;;" ;ië;[o;;[o;;@€;ië;[o;>;@€;ië;["clearfix;	@;
-[o;;o;;"1;	@;; ;ië;!;";	@;["	zoom;
+[ ;#i ;#i o;;T;[".clearfix;i	;o;;" ;i	;[o;;[o;;@	;i	;[o;>;@	;i	;["clearfix;	@;
+[o;;o;;"1;	@;; ;i	;!;";	@;["	zoom;
 [ ;#i ;#i 

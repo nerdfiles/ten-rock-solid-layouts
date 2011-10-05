@@ -201,9 +201,39 @@ $white: #ffffff;
 /* =============================================================== BODY CLASS SETS == */
 
 body { background: $white; }
-body._site_domain-com { background: $white; } 
-body._templatename-base { } 
-body._pagename-TBD { }
+body._site_domain-com { } 
+body._template-name_base { } 
+body._template-name_threeboxes { }
+body._page-name_TBD { }
+
+
+/* ==================================================================================
+   TEMPLATE: BASE
+   ================================================================================== */
+
+body._template-name_base { 
+    background: #fff;
+}
+
+
+/* ==================================================================================
+   TEMPLATE: THREEBOXES
+   ================================================================================== */
+
+body._template-name_threeboxes { 
+    background: #e0e0e0;
+    
+    .container { 
+        margin: 0 auto; 
+        width: 864px; }
+    
+    //.header-threeboxes { }
+    .header-base { 
+        background: orange; }
+    
+    //.footer-threeboxes { }
+    .footer-base { }
+}
 
 
 /* ==================================================================================

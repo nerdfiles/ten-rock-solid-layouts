@@ -173,7 +173,7 @@
 
 <!-- =============================================================== (ALWAYS) BODYCLASS == -->
 
-<body class="_site_domain-com _templatename-{% block templatename %}base{% endblock %} _pagename-TBD">
+<body class="_site_domain-com _template-name_{% block template-name %}base{% endblock %} _page-name_TBD">
 
 <!--
 
@@ -200,13 +200,31 @@
 -->
 
 <div class="container">
-{% block content %}
+
+{% block header-base %}
+{% include 'website/header-base.html' %}
+{% endblock %}
+
+<section class="content-base">
+{% block content-base %}
+
+    <hgroup>
+        <div class="category">Template</div>
+        <h1>Base Template</h1>
+        <p>Base template.</p>
+    </hgroup>
+
     <ul>
         <li><a href="/template/three-boxes/">Three Boxes</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
     </ul>
+    
 {% endblock %}
+</section>
+
+{% block footer-base %}
+{% include 'website/footer-base.html' %}
+{% endblock %}
+
 </div>
 
 <!--
