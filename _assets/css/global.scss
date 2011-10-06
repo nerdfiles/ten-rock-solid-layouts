@@ -9,7 +9,7 @@
  * @designer        nerdfiles
  * @org             none
  * @copyright       Copyright(c) 2011, 2011
- *                  by nerdfiles
+ *                  by nerdfiles 
  * @date            09.25.2011.1.09.p.cst
  * @project         ten-rock-solid-layouts
  * 
@@ -195,22 +195,26 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 $baseWidth: 72px;
 
-@mixin column { 
+@mixin columns { 
 
   outline: 1px solid gold;
   
-  .last { clear: left; }
+  .stint { clear: left; }
   
   @for $i from 1 through 12 {
   
-    .column-#{$i} { 
+    .columns-#{$i} { 
       float: left;
       width: $baseWidth * $i; 
       @include clearfix;
     }
-    
-  }
 
+  } 
+
+}
+
+@function columns-($n) {
+    @return $n * $baseWidth;
 }
 
 /* ==================================================================================
@@ -250,7 +254,7 @@ body {
 
     .container {
     
-    @include column;
+    @include columns;
     
 /* =============================================================== HEADER == */
 
@@ -307,7 +311,7 @@ body._template-name_threeboxes {
     
     .container { 
         margin: 0 auto; 
-        width: $baseWidth * 12; (@note: wanna column-12!)
+        width: columns-(12); /*(@note: wanna columns-12!)*/
     
 /* =============================================================== HEADER == */
 
@@ -327,6 +331,7 @@ body._template-name_threeboxes {
         .box-row { 
           .inner { padding: 0; }
           .box-stage { 
+            columns-
             .inner { 
               border: 1px solid gold; 
               padding: 20px; } } } }

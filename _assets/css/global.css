@@ -1,74 +1,613 @@
-/*
-Syntax error: Invalid CSS after "...aseWidth * 12; ": expected "}", was "(@note: wanna c..."
-        on line 310 of ./global.scss
+/* =============================================================== FILE DETAILS == 
+ *
+ * Global Stylesheet (SCSS) for Ten Rock Solid Layouts
+ *
+ * @file            global.scss
+ * @watching        global.css
+ *
+ * @author          nerdfiles
+ * @designer        nerdfiles
+ * @org             none
+ * @copyright       Copyright(c) 2011, 2011
+ *                  by nerdfiles 
+ * @date            09.25.2011.1.09.p.cst
+ * @project         ten-rock-solid-layouts
+ * 
+ * @see             http://designshack.co.uk/articles/layouts/10-rock-solid-website-layout-examples
+ */
+/* ==================================================================================
+   IMPORTS
+   ================================================================================== */
+@import url(type.css);
+/* ==================================================================================
+   MIXINS
+   ================================================================================== */
+/* =============================================================== CLEARFIX == */
+/* ==================================================================================
+   RESET: HTML5BP
+   ================================================================================== */
+/* =============================================================== HTML5 ELEMENTS DISPLAY == */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
 
-305: 
-306: /* =============================================================== CONTAINER == */
-307:     
-308:     .container { 
-309:         margin: 0 auto; 
-310:         width: $baseWidth * 12; (@note: wanna column-12!)
-311:     
-312: /* =============================================================== HEADER == */
-313: 
-314:     //.header-threeboxes { }
-315:     .header-base { }
+audio[controls], canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
 
-Backtrace:
-./global.scss:310
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:898:in `expected'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:841:in `expected'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:836:in `tok!'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:362:in `block'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:355:in `ruleset'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:417:in `block in declaration_or_ruleset'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:872:in `call'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:872:in `rethrow'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:418:in `declaration_or_ruleset'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:380:in `block_child'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:372:in `block_contents'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:361:in `block'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:355:in `ruleset'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:379:in `block_child'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:372:in `block_contents'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:57:in `stylesheet'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:26:in `parse'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/engine.rb:320:in `_to_tree'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/engine.rb:293:in `_render'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/engine.rb:240:in `render'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `each'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `each'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:252:in `block (4 levels) in watch'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/path.rb:73:in `call'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/path.rb:73:in `run_callback'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/path.rb:55:in `callback_action'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/path.rb:35:in `update'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/state/directory.rb:39:in `block in modified'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/state/directory.rb:37:in `each'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/state/directory.rb:37:in `modified'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/state/directory.rb:18:in `refresh'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:17:in `each'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:17:in `block in run'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:15:in `loop'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:15:in `run'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/monitor.rb:26:in `run'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm.rb:20:in `monitor'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:245:in `watch'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin.rb:111:in `method_missing'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/exec.rb:408:in `watch_or_update'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/exec.rb:294:in `process_result'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/exec.rb:41:in `parse'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/exec.rb:21:in `parse!'
-/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/bin/sass:8:in `<top (required)>'
-/usr/local/Cellar/ruby/1.9.2-p290/bin/sass:19:in `load'
-/usr/local/Cellar/ruby/1.9.2-p290/bin/sass:19:in `<main>'
-*/
-body:before {
+/* =============================================================== BASE == */
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.231;
+}
+
+body, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222;
+}
+
+/* These selection declarations have to be separate */
+::-moz-selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* =============================================================== LINKS == */
+a {
+  color: #00e;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+/* Improve readability when focused and hovered in all browsers: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {
+  outline: 0;
+}
+
+/* =============================================================== TYPOGRAPHY == */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 1em 40px;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Redeclare monospace font family */
+pre, code, kbd, samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/* Improve readability of pre-formatted text in all browsers */
+pre {
   white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...aseWidth * 12; \": expected \"}\", was \"(@note: wanna c...\"\A         on line 310 of ./global.scss\A \A 305: \A 306: /* =============================================================== CONTAINER == */\A 307:     \A 308:     .container { \A 309:         margin: 0 auto; \A 310:         width: $baseWidth * 12; (@note: wanna column-12!)\A 311:     \A 312: /* =============================================================== HEADER == */\A 313: \A 314:     //.header-threeboxes { }\A 315:     .header-base { }"; }
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+small {
+  font-size: 85%;
+}
+
+/* Position subscript and superscript content without affecting line-height */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================== LISTS == */
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+nav ul, nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================================== EMBEDDED CONTENT == */
+/* Improve image quality when scaled in IE7 */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* Correct overflow displayed oddly in IE9 */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================== FIGURES == */
+figure {
+  margin: 0;
+}
+
+/* =============================================================== FORMS == */
+form {
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+ * 1. Correct color not inheriting in IE6/7/8/9 
+ * 2. Correct alignment displayed oddly in IE6/7 
+ */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+}
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label {
+  cursor: pointer;
+}
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+/* Consistent box sizing and appearance */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+}
+
+input[type="search"] {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* Remove inner padding and border in FF3/4 */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Remove default vertical scrollbar in IE6/7/8/9 */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* Colors for form validity */
+input:invalid, textarea:invalid {
+  background-color: #f0dddd;
+}
+
+/* =============================================================== TABLES == */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==================================================================================
+    COLOR PALETTES
+   ================================================================================== */
+/* ==================================================================================
+    TYPESETTING
+   ================================================================================== */
+/* ==================================================================================
+    PRIMARY STYLES
+   ================================================================================== */
+/* =============================================================== BODY CLASS SETS == */
+body {
+  background: white;
+}
+
+/* ==================================================================================
+   DOCUMENT: BASE (DEFAULTS)
+   ================================================================================== */
+body {
+  /* =============================================================== CONTAINER == */
+}
+body .container {
+  outline: 1px solid gold;
+  /* =============================================================== HEADER == */
+  /* =============================================================== CONTENT == */
+  /* =============================================================== FOOTER == */
+}
+body .container .stint {
+  clear: left;
+}
+body .container .columns-1 {
+  float: left;
+  width: 72px;
+  zoom: 1;
+}
+body .container .columns-1:before, body .container .columns-1:after {
+  content: "";
+  display: table;
+}
+body .container .columns-1:after {
+  clear: both;
+}
+body .container .columns-2 {
+  float: left;
+  width: 144px;
+  zoom: 1;
+}
+body .container .columns-2:before, body .container .columns-2:after {
+  content: "";
+  display: table;
+}
+body .container .columns-2:after {
+  clear: both;
+}
+body .container .columns-3 {
+  float: left;
+  width: 216px;
+  zoom: 1;
+}
+body .container .columns-3:before, body .container .columns-3:after {
+  content: "";
+  display: table;
+}
+body .container .columns-3:after {
+  clear: both;
+}
+body .container .columns-4 {
+  float: left;
+  width: 288px;
+  zoom: 1;
+}
+body .container .columns-4:before, body .container .columns-4:after {
+  content: "";
+  display: table;
+}
+body .container .columns-4:after {
+  clear: both;
+}
+body .container .columns-5 {
+  float: left;
+  width: 360px;
+  zoom: 1;
+}
+body .container .columns-5:before, body .container .columns-5:after {
+  content: "";
+  display: table;
+}
+body .container .columns-5:after {
+  clear: both;
+}
+body .container .columns-6 {
+  float: left;
+  width: 432px;
+  zoom: 1;
+}
+body .container .columns-6:before, body .container .columns-6:after {
+  content: "";
+  display: table;
+}
+body .container .columns-6:after {
+  clear: both;
+}
+body .container .columns-7 {
+  float: left;
+  width: 504px;
+  zoom: 1;
+}
+body .container .columns-7:before, body .container .columns-7:after {
+  content: "";
+  display: table;
+}
+body .container .columns-7:after {
+  clear: both;
+}
+body .container .columns-8 {
+  float: left;
+  width: 576px;
+  zoom: 1;
+}
+body .container .columns-8:before, body .container .columns-8:after {
+  content: "";
+  display: table;
+}
+body .container .columns-8:after {
+  clear: both;
+}
+body .container .columns-9 {
+  float: left;
+  width: 648px;
+  zoom: 1;
+}
+body .container .columns-9:before, body .container .columns-9:after {
+  content: "";
+  display: table;
+}
+body .container .columns-9:after {
+  clear: both;
+}
+body .container .columns-10 {
+  float: left;
+  width: 720px;
+  zoom: 1;
+}
+body .container .columns-10:before, body .container .columns-10:after {
+  content: "";
+  display: table;
+}
+body .container .columns-10:after {
+  clear: both;
+}
+body .container .columns-11 {
+  float: left;
+  width: 792px;
+  zoom: 1;
+}
+body .container .columns-11:before, body .container .columns-11:after {
+  content: "";
+  display: table;
+}
+body .container .columns-11:after {
+  clear: both;
+}
+body .container .columns-12 {
+  float: left;
+  width: 864px;
+  zoom: 1;
+}
+body .container .columns-12:before, body .container .columns-12:after {
+  content: "";
+  display: table;
+}
+body .container .columns-12:after {
+  clear: both;
+}
+body .container .header-base {
+  padding: 20px;
+}
+body .container .footer-base {
+  padding: 20px;
+}
+body .container .footer-base p {
+  margin: 0;
+}
+
+/* End body */
+/* ==================================================================================
+   TEMPLATE: BASE
+   ================================================================================== */
+body._template-name_base {
+  background: #fff;
+  /* =============================================================== CONTAINER == */
+}
+body._template-name_base .container {
+  /* =============================================================== HEADER == */
+  /* =============================================================== CONTENT == */
+  /* =============================================================== FOOTER == */
+}
+
+/* End body._template-name_base */
+/* ==================================================================================
+   TEMPLATE: THREEBOXES
+   ================================================================================== */
+body._template-name_threeboxes {
+  background: #fff;
+  /* =============================================================== CONTAINER == */
+}
+body._template-name_threeboxes .container {
+  margin: 0 auto;
+  width: 864px;
+  /*(@note: wanna columns-12!)*/
+  /* =============================================================== HEADER == */
+  /* =============================================================== CONTENT == */
+  /* =============================================================== FOOTER == */
+}
+body._template-name_threeboxes .container .content-base {
+  zoom: 1;
+}
+body._template-name_threeboxes .container .content-base:before, body._template-name_threeboxes .container .content-base:after {
+  content: "";
+  display: table;
+}
+body._template-name_threeboxes .container .content-base:after {
+  clear: both;
+}
+body._template-name_threeboxes .container .content-base .box p {
+  margin: 0;
+}
+body._template-name_threeboxes .container .content-base .box .inner {
+  padding: 20px;
+}
+body._template-name_threeboxes .container .content-base .box-stage {
+  outline: 1px solid gold;
+}
+body._template-name_threeboxes .container .content-base .box-row .inner {
+  padding: 0;
+}
+body._template-name_threeboxes .container .content-base .box-row .box-stage columns-
+.inner {
+  border: 1px solid gold;
+  padding: 20px;
+}
+
+/* End body._template-name_threeboxes */
+/* ==================================================================================
+    NON-SEMANTIC HELPER CLASSES
+   ================================================================================== */
+/* For image replacement */
+.ir {
+  display: block;
+  text-indent: -999em;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+.ir br {
+  display: none;
+}
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden;
+}
+
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* Default clears */
+.inner {
+  zoom: 1;
+}
+.inner:before, .inner:after {
+  content: "";
+  display: table;
+}
+.inner:after {
+  clear: both;
+}
