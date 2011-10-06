@@ -193,6 +193,26 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 
+$baseWidth: 72px;
+
+@mixin column { 
+
+  outline: 1px solid gold;
+  
+  .last { clear: left; }
+  
+  @for $i from 1 through 12 {
+  
+    .column-#{$i} { 
+      float: left;
+      width: $baseWidth * $i; 
+      @include clearfix;
+    }
+    
+  }
+
+}
+
 /* ==================================================================================
     COLOR PALETTES
    ================================================================================== */
@@ -230,6 +250,8 @@ body {
 
     .container {
     
+    @include column;
+    
 /* =============================================================== HEADER == */
 
     .header-base { 
@@ -242,7 +264,6 @@ body {
 /* =============================================================== FOOTER == */
 
     .footer-base {
-      background: orange;
       padding: 20px; 
       p { margin: 0; } }
       
@@ -280,43 +301,40 @@ body._template-name_base {
    ================================================================================== */
 
 body._template-name_threeboxes { 
-    background: #e0e0e0;
+    background: #fff;
 
 /* =============================================================== CONTAINER == */
     
     .container { 
         margin: 0 auto; 
-        width: 864px;
+        width: $baseWidth * 12; (@note: wanna column-12!)
     
 /* =============================================================== HEADER == */
 
     //.header-threeboxes { }
-    .header-base { 
-        background: pink; }
+    .header-base { }
         
 /* =============================================================== CONTENT == */
         
     .content-base {
+      @include clearfix;
         .box { 
           p { margin: 0; } 
           .inner { padding: 20px; } }
         .box-stage { 
-          outline: 1px solid gold; 
-          width: 100%; }
+          outline: 1px solid gold;
+          }
         .box-row { 
-          
-          @include clearfix;
           .inner { padding: 0; }
           .box-stage { 
-            float: left;
-            width: 50%; 
-            .inner { padding: 20px; } } } }
+            .inner { 
+              border: 1px solid gold; 
+              padding: 20px; } } } }
     
 /* =============================================================== FOOTER == */
 
     //.footer-threeboxes { }
-    .footer-base {
-      background: orange; }
+    .footer-base { }
     
     } } /* End body._template-name_threeboxes */
 
@@ -348,3 +366,9 @@ body._template-name_threeboxes {
 
 .clearfix { 
   @include clearfix; }
+  
+/* Default clears */
+
+.inner { 
+  @include clearfix; }
+  

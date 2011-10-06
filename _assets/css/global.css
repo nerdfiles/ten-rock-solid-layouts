@@ -1,1 +1,74 @@
-@import url(type.css);article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}audio[controls],canvas,video{display:inline-block;*display:inline;*zoom:1}html{font-size:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0;font-size:13px;line-height:1.231}body,button,input,select,textarea{font-family:sans-serif;color:#222}::-moz-selection{background:#fe57a1;color:#fff;text-shadow:none}::selection{background:#fe57a1;color:#fff;text-shadow:none}a{color:#00e}a:visited{color:#551a8b}a:focus{outline:thin dotted}a:hover,a:active{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 40px}dfn{font-style:italic}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}ins{background:#ff9;color:#000;text-decoration:none}mark{background:#ff0;color:#000;font-style:italic;font-weight:bold}pre,code,kbd,samp{font-family:monospace, monospace;_font-family:'courier new', monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:"";content:none}small{font-size:85%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}ul,ol{margin:1em 0;padding:0 0 0 40px}dd{margin:0 0 0 40px}nav ul,nav ol{list-style:none;margin:0;padding:0}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:0;margin:0;padding:0}legend{border:0;*margin-left:-7px;padding:0}label{cursor:pointer}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal;*overflow:visible}button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}input[type="checkbox"],input[type="radio"]{box-sizing:border-box}input[type="search"]{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}input:invalid,textarea:invalid{background-color:#f0dddd}table{border-collapse:collapse;border-spacing:0}body{background:#fff}body .container .header-base{padding:20px}body .container .footer-base{background:orange;padding:20px}body .container .footer-base p{margin:0}body._template-name_base{background:#fff}body._template-name_threeboxes{background:#e0e0e0}body._template-name_threeboxes .container{margin:0 auto;width:864px}body._template-name_threeboxes .container .header-base{background:pink}body._template-name_threeboxes .container .content-base .box p{margin:0}body._template-name_threeboxes .container .content-base .box .inner{padding:20px}body._template-name_threeboxes .container .content-base .box-stage{outline:1px solid gold;width:100%}body._template-name_threeboxes .container .content-base .box-row{zoom:1}body._template-name_threeboxes .container .content-base .box-row:before,body._template-name_threeboxes .container .content-base .box-row:after{content:"";display:table}body._template-name_threeboxes .container .content-base .box-row:after{clear:both}body._template-name_threeboxes .container .content-base .box-row .inner{padding:0}body._template-name_threeboxes .container .content-base .box-row .box-stage{float:left;width:50%}body._template-name_threeboxes .container .content-base .box-row .box-stage .inner{padding:20px}body._template-name_threeboxes .container .footer-base{background:orange}.ir{display:block;text-indent:-999em;overflow:hidden;background-repeat:no-repeat;text-align:left;direction:ltr}.ir br{display:none}.hidden{display:none;visibility:hidden}.visuallyhidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.invisible{visibility:hidden}.clearfix{zoom:1}.clearfix:before,.clearfix:after{content:"";display:table}.clearfix:after{clear:both}
+/*
+Syntax error: Invalid CSS after "...aseWidth * 12; ": expected "}", was "(@note: wanna c..."
+        on line 310 of ./global.scss
+
+305: 
+306: /* =============================================================== CONTAINER == */
+307:     
+308:     .container { 
+309:         margin: 0 auto; 
+310:         width: $baseWidth * 12; (@note: wanna column-12!)
+311:     
+312: /* =============================================================== HEADER == */
+313: 
+314:     //.header-threeboxes { }
+315:     .header-base { }
+
+Backtrace:
+./global.scss:310
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:898:in `expected'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:841:in `expected'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:836:in `tok!'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:362:in `block'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:355:in `ruleset'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:417:in `block in declaration_or_ruleset'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:872:in `call'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:872:in `rethrow'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:418:in `declaration_or_ruleset'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:380:in `block_child'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:372:in `block_contents'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:361:in `block'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:355:in `ruleset'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:379:in `block_child'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:372:in `block_contents'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:57:in `stylesheet'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/scss/parser.rb:26:in `parse'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/engine.rb:320:in `_to_tree'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/engine.rb:293:in `_render'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/engine.rb:240:in `render'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `each'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `each'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:252:in `block (4 levels) in watch'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/path.rb:73:in `call'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/path.rb:73:in `run_callback'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/path.rb:55:in `callback_action'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/path.rb:35:in `update'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/state/directory.rb:39:in `block in modified'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/state/directory.rb:37:in `each'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/state/directory.rb:37:in `modified'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/state/directory.rb:18:in `refresh'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:17:in `each'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:17:in `block in run'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:15:in `loop'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/backends/polling.rb:15:in `run'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm/monitor.rb:26:in `run'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/fssm-0.2.7/lib/fssm.rb:20:in `monitor'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:245:in `watch'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/plugin.rb:111:in `method_missing'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/exec.rb:408:in `watch_or_update'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/exec.rb:294:in `process_result'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/exec.rb:41:in `parse'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/lib/sass/exec.rb:21:in `parse!'
+/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/sass-3.1.7/bin/sass:8:in `<top (required)>'
+/usr/local/Cellar/ruby/1.9.2-p290/bin/sass:19:in `load'
+/usr/local/Cellar/ruby/1.9.2-p290/bin/sass:19:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"...aseWidth * 12; \": expected \"}\", was \"(@note: wanna c...\"\A         on line 310 of ./global.scss\A \A 305: \A 306: /* =============================================================== CONTAINER == */\A 307:     \A 308:     .container { \A 309:         margin: 0 auto; \A 310:         width: $baseWidth * 12; (@note: wanna column-12!)\A 311:     \A 312: /* =============================================================== HEADER == */\A 313: \A 314:     //.header-threeboxes { }\A 315:     .header-base { }"; }
