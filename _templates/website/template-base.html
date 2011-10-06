@@ -201,9 +201,14 @@
 
 <div class="container">
 
+<!-- =============================================================== BLOCK: HEADER-BASE == -->
+
 {% block header-base %}
 {% include 'website/header-base.html' %}
 {% endblock %}
+
+
+<!-- =============================================================== BLOCK: CONTENT-BASE == -->
 
 <section class="content-base">
 {% block content-base %}
@@ -219,7 +224,10 @@
     </ul>
     
 {% endblock %}
-</section>
+</section><!-- End .content-base -->
+
+
+<!-- =============================================================== BLOCK: FOOTER-BASE == -->
 
 {% block footer-base %}
 {% include 'website/footer-base.html' %}

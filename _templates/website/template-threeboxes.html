@@ -6,34 +6,42 @@
 {% block template-name %}threeboxes{% endblock %}
 
 
-<!-- ================================================================ BLOCK: BASE-HEADER == -->
+<!-- =============================================================== BLOCK: BASE-HEADER == -->
 
 {% block header-base %}
 {% include 'website/header-threeboxes.html' %}
 {% endblock %}
 
 
-<!-- ================================================================ BLOCK: BASE-CONTENT == -->
+<!-- =============================================================== BLOCK: BASE-CONTENT == -->
 
 {% block content-base %}
 
 <div class="box box-stage">
+  <div class="inner">
     <p>Box Stage</p>
+  </div>
 </div>
 
 <div class="box box-row">
+  <div class="inner">
     <div class="box box-stage">
+      <div class="inner">
         <p>Box Stage</p>
+      </div>
     </div>
     <div class="box box-stage">
+      <div class="inner">
         <p>Box Stage</p>
+      </div>
     </div>
+  </div>
 </div>
 
 {% endblock %}
 
 
-<!-- ================================================================ BLOCK: BASE-FOOTER == -->
+<!-- =============================================================== BLOCK: BASE-FOOTER == -->
 
 {% block footer-base %}
 {% include 'website/footer-threeboxes.html' %}
