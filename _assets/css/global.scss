@@ -18,14 +18,27 @@
  
 
 /* ==================================================================================
-    IMPORTS
+   IMPORTS
    ================================================================================== */
 
 @import "type.css";
 
 
 /* ==================================================================================
-    RESET: HTML5BP
+   MIXINS
+   ================================================================================== */
+
+/* =============================================================== CLEARFIX == */
+
+@mixin clearfix {
+  zoom: 1;
+  &:before, &:after { content: ""; display: table; }
+  &:after { clear: both; }
+}
+
+
+/* ==================================================================================
+   RESET: HTML5BP
    ================================================================================== */
 
 /* =============================================================== HTML5 ELEMENTS DISPLAY == */
@@ -225,11 +238,24 @@ body._template-name_threeboxes {
     
     .container { 
         margin: 0 auto; 
-        width: 864px; }
+        width: 864px;
+        
+        .box { 
+          p { margin: 0; } }
+        .box-stage { 
+          outline: 1px solid gold; 
+          width: 100%; }
+        .box-row { 
+          
+          @include clearfix;
+          
+          .box-stage { 
+            float: left;
+            width: 50%; } } }
     
     //.header-threeboxes { }
     .header-base { 
-        background: orange; }
+        background: pink; }
     
     //.footer-threeboxes { }
     .footer-base { }
@@ -260,7 +286,6 @@ body._template-name_threeboxes {
 .invisible { visibility: hidden; }
 
 /* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */ 
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
 
+.clearfix { 
+  @include clearfix; }
