@@ -25,7 +25,7 @@
 
 
 /* ==================================================================================
-   MIXINS
+   SASS GOODNESS
    ================================================================================== */
 
 /* =============================================================== CLEARFIX == */
@@ -34,6 +34,47 @@
   zoom: 1;
   &:before, &:after { content: ""; display: table; }
   &:after { clear: both; }
+}
+
+$baseWidth: 40px;
+$baseGutter: 10px;
+$baseCompositeWidth: $baseWidth + ($baseGutter * 2);
+$baseLineHeight: 1;
+$themeLineHeight: 1.732;
+
+@function columns-($n) {
+    
+    $totalWidth: ($n * $baseWidth) + ($n * ($baseGutter * 2)) - ($baseGutter * 2);
+    
+    @if $n == 16 {
+        $totalWidth: ($n * $baseWidth) + ($n * ($baseGutter * 2)) - ($baseGutter * 2);
+    }
+    
+    @return $totalWidth;
+    
+}
+
+@mixin reset-lineheight {
+    line-height: $baseLineHeight;
+}
+
+@mixin grid-($w) {
+
+    float: left;
+    margin-left: $baseGutter;
+    margin-right: $baseGutter;
+    width: columns-($w);
+    
+} 
+
+.grid { 
+      & .grid:first-child { 
+          margin-left: 0 !important;
+      }
+      
+      & .grid:last-child { 
+          margin-right: 0 !important;
+      }
 }
 
 
@@ -193,36 +234,12 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 
-$baseWidth: 72px;
-
-@mixin columns { 
-
-  outline: 1px solid gold;
-  
-  .stint { clear: left; }
-  
-  @for $i from 1 through 12 {
-  
-    .columns-#{$i} { 
-      float: left;
-      width: $baseWidth * $i; 
-      @include clearfix;
-    }
-
-  } 
-
-}
-
-@function columns-($n) {
-    @return $n * $baseWidth;
-}
-
 /* ==================================================================================
     COLOR PALETTES
    ================================================================================== */
 
 $bodyBackground: #e0e0e0;
-$white: #ffffff;
+$white: #ffffff; 
 
 
 /* ==================================================================================
@@ -253,8 +270,6 @@ body {
 /* =============================================================== CONTAINER == */
 
     .container {
-    
-    @include columns;
     
 /* =============================================================== HEADER == */
 
@@ -311,7 +326,7 @@ body._template-name_threeboxes {
     
     .container { 
         margin: 0 auto; 
-        width: columns-(12); /*(@note: wanna columns-12!)*/
+        width: 960px;
     
 /* =============================================================== HEADER == */
 
@@ -326,14 +341,14 @@ body._template-name_threeboxes {
           p { margin: 0; } 
           .inner { padding: 20px; } }
         .box-stage { 
+          @include grid-(16);
           outline: 1px solid gold;
           }
         .box-row { 
           .inner { padding: 0; }
           .box-stage { 
-            columns-
+            @include grid-(4);
             .inner { 
-              border: 1px solid gold; 
               padding: 20px; } } } }
     
 /* =============================================================== FOOTER == */
