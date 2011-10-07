@@ -36,11 +36,15 @@
   &:after { clear: both; }
 }
 
+/* =============================================================== DEFAULTS == */
+
 $baseWidth: 16px;
 $baseGutter: 10px;
 $baseCompositeWidth: $baseWidth + ($baseGutter * 2);
 $baseLineHeight: 1;
 $themeLineHeight: 1.732;
+
+/* =============================================================== FUNCTIONS == */
 
 @function columns-($n) {
     
@@ -54,6 +58,8 @@ $themeLineHeight: 1.732;
     
 }
 
+/* =============================================================== MIXINS == */
+
 @mixin reset-lineheight {
     line-height: $baseLineHeight;
 }
@@ -66,6 +72,8 @@ $themeLineHeight: 1.732;
     width: columns-($w);
     
 } 
+
+/* =============================================================== GRID SYSTEM GOTCHAS == */
 
 .grid { 
       & .grid:first-child { 
@@ -273,8 +281,7 @@ body {
     
 /* =============================================================== HEADER == */
 
-    .header-base { 
-      padding: 20px; }
+    .header-base { }
     
 /* =============================================================== CONTENT == */
 
@@ -283,7 +290,6 @@ body {
 /* =============================================================== FOOTER == */
 
     .footer-base {
-      padding: 20px; 
       p { margin: 0; } }
       
     } } /* End body */
@@ -325,14 +331,19 @@ body._template-name_threeboxes {
 /* =============================================================== CONTAINER == */
     
     .container { 
-        margin: 0 auto; 
+        margin: 20px auto 20px; 
         //width: 960px;
         width: 864px;
+        @include clearfix;
     
 /* =============================================================== HEADER == */
 
     //.header-threeboxes { }
-    .header-base { }
+    .header-base { 
+      background: #e0e0e0;
+      margin-bottom: 20px;
+      @include grid-(24); 
+      .inner { padding: 20px; } }
         
 /* =============================================================== CONTENT == */
         
@@ -343,19 +354,24 @@ body._template-name_threeboxes {
           .inner { padding: 20px; } }
         .box-stage { 
           @include grid-(24);
-          outline: 1px solid gold;
+          background: #e0e0e0;
+          margin-bottom: 20px;
           }
         .box-row { 
           .inner { padding: 0; }
           .box-stage { 
-            @include grid-(4);
+            @include grid-(12);
             .inner { 
               padding: 20px; } } } }
     
 /* =============================================================== FOOTER == */
 
     //.footer-threeboxes { }
-    .footer-base { }
+    .footer-base { 
+      @include grid-(24);
+      background: #e0e0e0; 
+      
+      .inner { padding: 20px; } }
     
     } } /* End body._template-name_threeboxes */
 
