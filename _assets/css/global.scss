@@ -431,14 +431,6 @@ body._template-name_threeboxes {
 
 @media only screen and (orientation:portrait) and (min-device-width: 768px) and (max-device-width: 1024px) {
 
-  body { } 
-  
-} /* End Portrait */
-
-/* Landscape */
-
-@media only screen and (orientation:landscape) and (min-device-width: 768px) and (max-device-width: 1024px) {
-
   body._template-name_threeboxes { 
     
     .container { 
@@ -480,6 +472,14 @@ body._template-name_threeboxes {
         @include center-grid;
         width: 100%;
         margin-bottom: 20px; } } }
+  
+} /* End Portrait */
+
+/* Landscape */
+
+@media only screen and (orientation:landscape) and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+  body { }
          
 } /* End Landscape */
    
@@ -489,7 +489,7 @@ body._template-name_threeboxes {
 
 @media only screen and (max-device-width: 480px), (max-width: 480px) {
 
-  body { background: orange; } 
+  body { } 
   
 } /* End Portrait and Landscape */
 
