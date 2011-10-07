@@ -38,7 +38,19 @@
 
 /* =============================================================== DEFAULTS == */
 
+/* 864px @ 24 columns */
+
+/*
 $baseWidth: 16px;
+$baseGutter: 10px;
+$baseCompositeWidth: $baseWidth + ($baseGutter * 2);
+$baseLineHeight: 1;
+$themeLineHeight: 1.732;
+*/
+
+/* 996px @ 12 columns */
+
+$baseWidth: 63px;
 $baseGutter: 10px;
 $baseCompositeWidth: $baseWidth + ($baseGutter * 2);
 $baseLineHeight: 1;
@@ -73,14 +85,19 @@ $themeLineHeight: 1.732;
     
 } 
 
+@mixin center-grid {
+  float: none;
+  margin: 0 auto;
+}
+
 /* =============================================================== GRID SYSTEM GOTCHAS == */
 
-.grid { 
-      & .grid:first-child { 
+@mixin grid-container { 
+      & .inner > *:first-child { 
           margin-left: 0 !important;
       }
       
-      & .grid:last-child { 
+      & .inner > *:last-child { 
           margin-right: 0 !important;
       }
 }
@@ -333,7 +350,8 @@ body._template-name_threeboxes {
     .container { 
         margin: 0 auto; 
         //width: 960px;
-        width: 864px;
+        //width: 864px;
+        width: 996px;
         @include clearfix;
     
 /* =============================================================== HEADER == */
@@ -345,13 +363,13 @@ body._template-name_threeboxes {
       .inner { }
       .logo { 
         background: #e0e0e0;
-        @include grid-(8); 
+        @include grid-(3); 
         a { 
           padding: 20px;
           vertical-align: top;
           display: block; } }
       .nav { 
-        @include grid-(16); 
+        @include grid-(9); 
         ul { 
           float: right; 
           @include clearfix; } 
@@ -361,42 +379,203 @@ body._template-name_threeboxes {
         a { 
           display: block;
           background: #e0e0e0;
-          padding: 10px 30px; } } }
+          padding: 7px 10px; } } }
         
 /* =============================================================== CONTENT == */
         
     .content-base {
       @include clearfix;
-        .box { 
-          p { margin: 0; } 
-          .inner { padding: 20px; } }
+      .box { 
+        p { margin: 0; } 
+        .inner { padding: 20px; } }
+      .box-stage { 
+        @include grid-(12);
+        background: #e0e0e0;
+        margin-bottom: 20px;
+        }
+      .box-row { 
+        .inner { padding: 0; }
         .box-stage { 
-          @include grid-(24);
-          background: #e0e0e0;
-          margin-bottom: 20px;
-          }
-        .box-row { 
-          .inner { padding: 0; }
-          .box-stage { 
-            @include grid-(12);
-            .inner { 
-              padding: 20px; } } } }
+          @include grid-(6);
+          .inner { 
+            padding: 20px; } } } }
     
 /* =============================================================== FOOTER == */
 
     //.footer-threeboxes { }
     .footer-base { 
-      @include grid-(24);
+      @include grid-(12);
       background: #e0e0e0; 
       margin-bottom: 20px;
       
       .inner { padding: 20px; } }
     
     } } /* End body._template-name_threeboxes */
+    
+
+/* =============================================================================
+   MOBILE
+   ========================================================================== */
+
+/* ========================================================================== iPad == */
+
+/* Portait and Landscape */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+  body { } 
+  
+} /* End Portrait and Landscape */
+
+/* Portrait */
+
+@media only screen and (orientation:portrait) and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+  body { } 
+  
+} /* End Portrait */
+
+/* Landscape */
+
+@media only screen and (orientation:landscape) and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+  body._template-name_threeboxes { 
+    
+    .container { 
+      width: 90%;
+      margin: 0 5%;
+      .header-base { 
+        //@include grid-(3);
+        @include center-grid;
+        @include grid-container;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .logo { 
+          @include grid-(1); 
+          }
+        .nav { 
+          @include grid-(3); 
+          float: right;
+          ul { float: right; } } 
+      }
+      
+      .content-base { 
+        .box { 
+          @include center-grid; } 
+        .box-stage { 
+          //@include grid-(3);
+          //@include center-grid;
+          width: 100%;
+          margin-bottom: 20px; }
+        .box-row { 
+          .box-stage { 
+            //@include grid-(3);
+            @include center-grid; 
+            width: 100%;
+            margin-bottom: 20px; } } } 
+            
+      .footer-base { 
+        //@include grid-(3);
+        @include center-grid;
+        width: 100%;
+        margin-bottom: 20px; } } }
+         
+} /* End Landscape */
+   
+/* ========================================================================== iPhone == */
+
+/* Portait and Landscape */
+
+@media only screen and (max-device-width: 480px), (max-width: 480px) {
+
+  body { background: orange; } 
+  
+} /* End Portrait and Landscape */
+
+/* Portait */
+
+@media only screen and (orientation:portrait) and (max-device-width: 480px) and (max-width: 480px) {
+    
+/* ==================================================================================
+   TEMPLATE: THREEBOXES
+   ================================================================================== */
+
+  body._template-name_threeboxes { 
+      
+    .container { 
+      width: 300px;
+      .header-base { 
+        //@include grid-(3);
+        @include center-grid;
+        @include grid-container;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .logo { 
+          @include grid-(1); 
+          margin-right: 0; /* Gotcha! */ }
+        .nav { 
+          @include grid-(3); 
+          margin-left: 0; /* Gotcha! */
+          float: right;
+          ul { float: right; } } 
+      }
+      
+      .content-base { 
+        .box { 
+          @include center-grid; } 
+        .box-stage { 
+          //@include grid-(3);
+          //@include center-grid;
+          width: 100%;
+          margin-bottom: 20px; }
+        .box-row { 
+          .box-stage { 
+            //@include grid-(3);
+            @include center-grid; 
+            width: 100%;
+            margin-bottom: 20px; } } } 
+            
+      .footer-base { 
+        //@include grid-(3);
+        @include center-grid;
+        width: 100%;
+        margin-bottom: 20px; } } } 
+
+} /* End Portrait */
+      
+/* Landscape */
+
+@media only screen and (orientation:landscape) and (max-device-width: 480px) and (max-width: 480px) {
+
+  body { }
+  
+} /* End Landscape */
+
+
+/* =============================================================================
+   PRINT STYLES
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
 
 
 /* ==================================================================================
-    NON-SEMANTIC HELPER CLASSES
+   NON-SEMANTIC HELPER CLASSES
    ================================================================================== */
    
 
