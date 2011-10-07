@@ -36,7 +36,7 @@
   &:after { clear: both; }
 }
 
-$baseWidth: 40px;
+$baseWidth: 16px;
 $baseGutter: 10px;
 $baseCompositeWidth: $baseWidth + ($baseGutter * 2);
 $baseLineHeight: 1;
@@ -46,7 +46,7 @@ $themeLineHeight: 1.732;
     
     $totalWidth: ($n * $baseWidth) + ($n * ($baseGutter * 2)) - ($baseGutter * 2);
     
-    @if $n == 16 {
+    @if $n == 24 {
         $totalWidth: ($n * $baseWidth) + ($n * ($baseGutter * 2)) - ($baseGutter * 2);
     }
     
@@ -326,7 +326,8 @@ body._template-name_threeboxes {
     
     .container { 
         margin: 0 auto; 
-        width: 960px;
+        //width: 960px;
+        width: 864px;
     
 /* =============================================================== HEADER == */
 
@@ -341,7 +342,7 @@ body._template-name_threeboxes {
           p { margin: 0; } 
           .inner { padding: 20px; } }
         .box-stage { 
-          @include grid-(16);
+          @include grid-(24);
           outline: 1px solid gold;
           }
         .box-row { 
