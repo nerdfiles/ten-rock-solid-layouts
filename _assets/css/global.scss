@@ -331,7 +331,7 @@ body._template-name_threeboxes {
 /* =============================================================== CONTAINER == */
     
     .container { 
-        margin: 20px auto 20px; 
+        margin: 0 auto; 
         //width: 960px;
         width: 864px;
         @include clearfix;
@@ -340,10 +340,28 @@ body._template-name_threeboxes {
 
     //.header-threeboxes { }
     .header-base { 
-      background: #e0e0e0;
+      margin-top: 20px;
       margin-bottom: 20px;
-      @include grid-(24); 
-      .inner { padding: 20px; } }
+      .inner { }
+      .logo { 
+        background: #e0e0e0;
+        @include grid-(8); 
+        a { 
+          padding: 20px;
+          vertical-align: top;
+          display: block; } }
+      .nav { 
+        @include grid-(16); 
+        ul { 
+          float: right; 
+          @include clearfix; } 
+        li { 
+          float: left;
+          margin: 0 0 0 20px; } 
+        a { 
+          display: block;
+          background: #e0e0e0;
+          padding: 10px 30px; } } }
         
 /* =============================================================== CONTENT == */
         
@@ -370,6 +388,7 @@ body._template-name_threeboxes {
     .footer-base { 
       @include grid-(24);
       background: #e0e0e0; 
+      margin-bottom: 20px;
       
       .inner { padding: 20px; } }
     
