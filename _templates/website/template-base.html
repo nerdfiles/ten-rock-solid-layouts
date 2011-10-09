@@ -210,21 +210,20 @@
 
 <!-- =============================================================== BLOCK: CONTENT-BASE == -->
 
-<section class="content-base">
 {% block content-base %}
+<section class="{% block content-base-class %}content-base{% endblock %}">
+  <hgroup>
+    <div class="category">Template</div>
+    <h1>Base Template</h1>
+    <p>Base template.</p>
+  </hgroup>
 
-    <hgroup>
-        <div class="category">Template</div>
-        <h1>Base Template</h1>
-        <p>Base template.</p>
-    </hgroup>
-
-    <ul>
-        <li><a href="/template/three-boxes/">Three Boxes</a></li>
-    </ul>
-    
-{% endblock %}
+  <ul>
+    <li><a href="/template/three-boxes/">Three Boxes</a></li>
+    <li><a href="/template/3d-screenshots/">3D Screenshots</a></li>
+  </ul>
 </section><!-- End .content-base -->
+{% endblock %}
 
 
 <!-- =============================================================== BLOCK: FOOTER-BASE == -->

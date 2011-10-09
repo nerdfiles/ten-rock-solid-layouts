@@ -59,15 +59,8 @@ $themeLineHeight: 1.732;
 /* =============================================================== FUNCTIONS == */
 
 @function columns-($n) {
-    
     $totalWidth: ($n * $baseWidth) + ($n * ($baseGutter * 2)) - ($baseGutter * 2);
-    
-    @if $n == 24 {
-        $totalWidth: ($n * $baseWidth) + ($n * ($baseGutter * 2)) - ($baseGutter * 2);
-    }
-    
     @return $totalWidth;
-    
 }
 
 /* =============================================================== MIXINS == */
@@ -411,6 +404,70 @@ body._template-name_threeboxes {
       .inner { padding: 20px; } }
     
     } } /* End body._template-name_threeboxes */
+    
+
+/* ==================================================================================
+   TEMPLATE: 3DSCREENSHOTS
+   ================================================================================== */
+
+body._template-name_3dscreenshots { 
+    background: #fff;
+
+/* =============================================================== CONTAINER == */
+    
+    .container { 
+        margin: 0 auto; 
+        //width: 960px;
+        //width: 864px;
+        width: 996px;
+        @include clearfix;
+    
+/* =============================================================== HEADER == */
+
+    //.header-threeboxes { }
+    .header-base { 
+      margin-top: 20px;
+      margin-bottom: 20px;
+      .inner { }
+      .logo { 
+        background: #e0e0e0;
+        @include grid-(3); 
+        a { 
+          padding: 20px;
+          vertical-align: top;
+          display: block; } }
+      .nav { 
+        @include grid-(9); 
+        ul { 
+          float: right; 
+          @include clearfix; } 
+        li { 
+          float: left;
+          margin: 0 0 0 20px; } 
+        a { 
+          display: block;
+          background: #e0e0e0;
+          padding: 7px 10px; } } }
+        
+/* =============================================================== CONTENT == */
+        
+    .content-base {
+      .box { 
+        p { } 
+        .inner { } }
+      .box-stage { }
+      .box-row { 
+        .inner { }
+        .box-stage { 
+          .inner { } } } }
+    
+/* =============================================================== FOOTER == */
+
+    //.footer-3dscreenshots { }
+    .footer-base { 
+      .inner { } }
+    
+    } } /* End body._template-name_3dscreenshots */
     
 
 /* =============================================================================
