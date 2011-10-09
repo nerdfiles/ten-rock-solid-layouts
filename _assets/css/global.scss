@@ -451,21 +451,21 @@ body._template-name_3dscreenshots {
         
 /* =============================================================== CONTENT == */
         
-    .content-base {
-      .box { 
-        p { } 
-        .inner { } }
-      .box-stage { }
-      .box-row { 
-        .inner { }
-        .box-stage { 
-          .inner { } } } }
+    .content-base { 
+      .intro { 
+        @include grid-(12); }
+      .screenshots { 
+        @include grid-(12); } }
     
 /* =============================================================== FOOTER == */
 
     //.footer-3dscreenshots { }
     .footer-base { 
-      .inner { } }
+      @include grid-(12);
+      margin-top: 20px;
+      background: #e0e0e0;
+      .inner { 
+        padding: 20px; } }
     
     } } /* End body._template-name_3dscreenshots */
     
